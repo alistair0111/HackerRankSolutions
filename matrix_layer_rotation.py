@@ -42,6 +42,52 @@ def printmat(mat,m,n):
         for j in range(n):
             print(mat[i][j], end=" "),
         print()
+        
+        
+        
+
+
+#Alternate Method
+#!/bin/python3
+import math
+import os
+import random
+import re
+import sys
+def matrixRotation(matrix, r,m,n):
+    numrings=min(m,n)//2
+    for i in range(numrings):
+        numRotations = r%(2*(m + n - 4*i) - 4)
+        for rotation in range(numRotations):
+            for j in range(i,n-i-1):
+                temp=matrix[i][j]
+                matrix[i][j]=matrix[i][j+1]
+                matrix[i][j+1]=temp
+            for j in range(i,m-i-1):
+                temp=matrix[j][n-i-1]
+                matrix[j][n-i-1]=matrix[j+1][n-i-1]
+                matrix[j+1][n-i-1]=temp
+            for j in range(n-i-1,i,-1):
+                temp=matrix[m-i-1][j]
+                matrix[m-i-1][j]=matrix[m-i-1][j-1]
+                matrix[m-i-1][j-1]=temp
+            for j in range(m-i-1,i+1,-1):
+                temp=matrix[j][i]
+                matrix[j][i]=matrix[j-1][i]
+                matrix[j-1][i]=temp
+
+    
+    
+    printmat(matrix,m,n)
+
+def printmat(mat,m,n):
+    for i in range(m):
+        for j in range(n):
+            print(mat[i][j], end=" "),
+        print()
+
+
+
 
 
 
