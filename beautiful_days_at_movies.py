@@ -16,7 +16,7 @@ def reverse(Number):
     return Reverse
 def beautifulDays(i, j, k):
     count=0
-    for i in range(i,j):
+    for i in range(i,j+1):
         rev=reverse(i)
         if(abs(i-rev)%k==0):
             count+=1
