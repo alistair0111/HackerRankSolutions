@@ -14,12 +14,11 @@ def angryProfessor(k, a):
         if(a[i]<=0):
             arrived_ontime+=1
         elif(a[i]>0):
-            arribed_late+=1
+            arrived_late+=1
     if(arrived_ontime>=k):
+        return 'NO'
+    else:
         return 'YES'
-    esle:
-    
-
 
 
 if __name__ == '__main__':
