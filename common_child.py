@@ -7,19 +7,14 @@ import re
 import sys
 
 # Complete the commonChild function below.
-def commonChild(s1, s2):
-    m = len(s1)
-    n = len(s2)
-    L = [[None]*(n+1) for i in range(m+1)]
-    for i in range(m+1): 
-        for j in range(n+1): 
-            if i == 0 or j == 0 : 
-                L[i][j] = 0
-            elif s1[i-1] == s2[j-1]: 
-                L[i][j] = L[i-1][j-1]+1
-            else: 
-                L[i][j] = max(L[i-1][j] , L[i][j-1]) 
-    return L[i][j]
+def commonChild(s1, s2,m,n):
+ 
+    if m == 0 or n == 0: 
+       return 0; 
+    elif s1[m-1] == s2[n-1]: 
+       return 1 + commonChild(s1, s2, m-1, n-1); 
+    else: 
+       return max(commonChild(s1, s2, m, n-1), commonChild(s1, s2, m-1, n));
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
@@ -27,8 +22,10 @@ if __name__ == '__main__':
     s1 = input()
 
     s2 = input()
+    m = len(s1)
+    n = len(s2)
 
-    result = commonChild(s1, s2)
+    result = commonChild(s1, s2,m,n)
 
     fptr.write(str(result) + '\n')
 
