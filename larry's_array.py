@@ -1,10 +1,10 @@
-Short version: An inversion occurs when the a given value in an array precedes another value in the array.
+# Short version: An inversion occurs when the a given value in an array precedes another value in the array.
 
-For instance, in an array of (random picks here): 3 1 4 5 6 2
+# For instance, in an array of (random picks here): 3 1 4 5 6 2
 
-1 is preceded by higher value 3, so that's 1 inversion. 3, 4, 5, and 6 each precede the lower value 2, so that's 1 inversion each.
+# 1 is preceded by higher value 3, so that's 1 inversion. 3, 4, 5, and 6 each precede the lower value 2, so that's 1 inversion each.
 
-For this problem, the array can be solved with the given formula if the total number of inversions is even/divisible by 2.
+# For this problem, the array can be solved with the given formula if the total number of inversions is even/divisible by 2.
 
 #!/bin/python3
 
