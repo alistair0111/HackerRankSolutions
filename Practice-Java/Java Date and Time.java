@@ -21,6 +21,7 @@ class Result {
      *  2. INTEGER day
      *  3. INTEGER year
      */
+    // Reference Zeller's Congruence
 
     private static final String[] DAYS = {"SUNDAY", "MONDAY","TUESDAY", "WEDNESDAY",                "THURSDAY","FRIDAY","SATURDAY"};
     public static String findDay(int month, int day, int year) {
