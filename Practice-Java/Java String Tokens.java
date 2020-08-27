@@ -7,13 +7,16 @@ public class Solution {
         Scanner scan = new Scanner(System.in);
         String s = scan.nextLine();
         // Write your code here.
-        String reg = "[!,?._'@\\s]+";
-        String[] tokens = s.split(reg);
-        int count=0;
-        System.out.println(tokens.length);
-        for(String token : tokens){
-            System.out.println(token);
-        }
+       if (s.trim().length()==0 || s.trim().length()>400000)
+    {
+        System.out.println(0);
+        return;
+    }
+
+    String words[]=s.trim().split("[ !,?.\\_'@]+");
+    System.out.println(words.length);
+    for (String word:words)
+        System.out.println(word);
         scan.close();
     }
 }
